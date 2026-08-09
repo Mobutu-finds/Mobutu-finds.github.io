@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mes Sélections Vêtements</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #fafafa;
+    color: #222;
+  }
+
+  header {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  header p {
+    margin-top: 8px;
+    color: #ccc;
+    font-size: 1rem;
+  }
+
+  .grid {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 24px;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  }
+
+  .card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .card-info {
+    padding: 16px;
+  }
+
+  .card-info h2 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .card-info .price {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 14px;
+  }
+
+  .buy-btn {
+    display: block;
+    text-align: center;
+    background-color: #111;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+  }
+
+  .buy-btn:hover {
+    background-color: #333;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: #888;
+    font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <h1>Mes Sélections Vêtements</h1>
+    <p>Une sélection de pièces qui me plaisent, avec les liens pour les acheter</p>
+  </header>
+
+  <main class="grid">
+
+    <!-- Exemple de produit n°1 : copie/colle ce bloc pour chaque nouveau vêtement -->
+    <div class="card">
+      <img src="https://via.placeholder.com/400x500?text=Photo+du+vetement" alt="Nom du vêtement">
+      <div class="card-info">
+        <h2>Nom du vêtement</h2>
+        <p class="price">29,99 €</p>
+        <a href="https://www.exemple-boutique.com" class="buy-btn" target="_blank">Acheter</a>
+      </div>
+    </div>
+
+    <!-- Exemple de produit n°2 -->
+    <div class="card">
+      <img src="https://via.placeholder.com/400x500?text=Photo+du+vetement" alt="Nom du vêtement">
+      <div class="card-info">
+        <h2>Nom du vêtement</h2>
+        <p class="price">49,99 €</p>
+        <a href="https://www.exemple-boutique.com" class="buy-btn" target="_blank">Acheter</a>
+      </div>
+    </div>
+
+    <!-- Exemple de produit n°3 -->
+    <div class="card">
+      <img src="https://via.placeholder.com/400x500?text=Photo+du+vetement" alt="Nom du vêtement">
+      <div class="card-info">
+        <h2>Nom du vêtement</h2>
+        <p class="price">19,99 €</p>
+        <a href="https://www.exemple-boutique.com" class="buy-btn" target="_blank">Acheter</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Site créé avec ❤️ — les liens renvoient vers les boutiques partenaires</p>
+  </footer>
+
+</body>
+</html>
