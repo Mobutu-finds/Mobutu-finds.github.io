@@ -58,9 +58,25 @@
     max-width: 500px;
     background-color: #262626;
     border-radius: 30px;
-    padding: 14px 22px;
-    color: #999;
+    padding: 4px 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .search-bar input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
     font-size: 0.95rem;
+    padding: 10px 0;
+    font-family: inherit;
+  }
+
+  .search-bar input::placeholder {
+    color: #999;
   }
 
   .categories {
@@ -77,6 +93,9 @@
     gap: 10px;
     min-width: 70px;
     cursor: pointer;
+    background: none;
+    border: none;
+    font-family: inherit;
   }
 
   .category .circle {
@@ -88,11 +107,19 @@
     align-items: center;
     justify-content: center;
     font-size: 1.6rem;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, outline 0.2s ease;
+  }
+
+  .category.active .circle {
+    background-color: #e91e63;
   }
 
   .category:hover .circle {
     background-color: #333;
+  }
+
+  .category.active:hover .circle {
+    background-color: #e91e63;
   }
 
   .category span {
@@ -166,6 +193,12 @@
     color: #fff;
   }
 
+  .empty-msg {
+    padding: 40px 60px;
+    color: #888;
+    display: none;
+  }
+
   footer {
     text-align: center;
     padding: 30px 20px;
@@ -186,25 +219,27 @@
 
   <section class="hero">
     <h1>Trouve le style.<br><em>Paye moins.</em></h1>
-    <div class="search-bar">🔍 Rechercher un vêtement...</div>
+    <div class="search-bar">
+      🔍 <input type="text" id="searchInput" placeholder="Rechercher un vêtement...">
+    </div>
   </section>
 
-  <div class="categories">
-    <div class="category"><div class="circle">🔥</div><span>Populaire</span></div>
-    <div class="category"><div class="circle">🆕</div><span>Nouveau</span></div>
-    <div class="category"><div class="circle">👕</div><span>T-shirts</span></div>
-    <div class="category"><div class="circle">🧥</div><span>Vestes</span></div>
-    <div class="category"><div class="circle">👖</div><span>Pantalons</span></div>
-    <div class="category"><div class="circle">👟</div><span>Chaussures</span></div>
-    <div class="category"><div class="circle">🧢</div><span>Accessoires</span></div>
-    <div class="category"><div class="circle">👜</div><span>Sacs</span></div>
-    <div class="category"><div class="circle">⌚</div><span>Montres</span></div>
+  <div class="categories" id="categoryBar">
+    <button class="category active" data-category="all"><div class="circle">🔥</div><span>Tout</span></button>
+    <button class="category" data-category="tshirt"><div class="circle">👕</div><span>T-shirts</span></button>
+    <button class="category" data-category="veste"><div class="circle">🧥</div><span>Vestes</span></button>
+    <button class="category" data-category="pantalon"><div class="circle">👖</div><span>Pantalons</span></button>
+    <button class="category" data-category="chaussure"><div class="circle">👟</div><span>Chaussures</span></button>
+    <button class="category" data-category="accessoire"><div class="circle">🧢</div><span>Accessoires</span></button>
+    <button class="category" data-category="sac"><div class="circle">👜</div><span>Sacs</span></button>
+    <button class="category" data-category="montre"><div class="circle">⌚</div><span>Montres</span></button>
   </div>
 
   <h2 class="section-title">Populaire</h2>
-  <main class="grid">
+  <main class="grid" id="productGrid">
 
-    <div class="card">
+    <!-- Pour chaque produit : copie ce bloc, change data-category et data-name selon le vêtement -->
+    <div class="card" data-category="tshirt" data-name="t-shirt blanc fleuri">
       <img src="https://via.placeholder.com/400x500/1e1e1e/666?text=Photo" alt="Nom du vêtement">
       <div class="card-info">
         <h2>Nom du vêtement</h2>
@@ -213,7 +248,7 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card" data-category="veste" data-name="veste noire">
       <img src="https://via.placeholder.com/400x500/1e1e1e/666?text=Photo" alt="Nom du vêtement">
       <div class="card-info">
         <h2>Nom du vêtement</h2>
@@ -222,7 +257,7 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card" data-category="chaussure" data-name="baskets blanches">
       <img src="https://via.placeholder.com/400x500/1e1e1e/666?text=Photo" alt="Nom du vêtement">
       <div class="card-info">
         <h2>Nom du vêtement</h2>
@@ -233,9 +268,45 @@
 
   </main>
 
+  <p class="empty-msg" id="emptyMsg">Aucun vêtement ne correspond à ta recherche.</p>
+
   <footer>
     <p>mobutufinds — les liens renvoient vers les boutiques partenaires</p>
   </footer>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const categoryButtons = document.querySelectorAll('.category');
+    const cards = document.querySelectorAll('#productGrid .card');
+    const emptyMsg = document.getElementById('emptyMsg');
+    let activeCategory = 'all';
+
+    function applyFilters() {
+      const query = searchInput.value.trim().toLowerCase();
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const matchesCategory = activeCategory === 'all' || card.dataset.category === activeCategory;
+        const matchesSearch = card.dataset.name.toLowerCase().includes(query);
+        const show = matchesCategory && matchesSearch;
+        card.style.display = show ? '' : 'none';
+        if (show) visibleCount++;
+      });
+
+      emptyMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    searchInput.addEventListener('input', applyFilters);
+
+    categoryButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        categoryButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeCategory = btn.dataset.category;
+        applyFilters();
+      });
+    });
+  </script>
 
 </body>
 </html>
