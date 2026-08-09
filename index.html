@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mes Sélections Vêtements</title>
+<title>Mobutu Finds</title>
 <style>
   * {
     margin: 0;
@@ -13,110 +13,199 @@
 
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #fafafa;
-    color: #222;
-  }
-
-  header {
-    background-color: #111;
+    background-color: #141414;
     color: #fff;
-    text-align: center;
-    padding: 40px 20px;
   }
 
-  header h1 {
-    font-size: 2rem;
-    letter-spacing: 1px;
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 60px;
   }
 
-  header p {
-    margin-top: 8px;
+  nav .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+
+  nav .links {
+    display: flex;
+    gap: 32px;
+    font-size: 0.95rem;
+    color: #ddd;
+  }
+
+  .hero {
+    padding: 40px 60px 20px;
+  }
+
+  .hero h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.15;
+    max-width: 600px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .search-bar {
+    margin-top: 32px;
+    max-width: 500px;
+    background-color: #262626;
+    border-radius: 30px;
+    padding: 14px 22px;
+    color: #999;
+    font-size: 0.95rem;
+  }
+
+  .categories {
+    display: flex;
+    gap: 26px;
+    padding: 40px 60px;
+    overflow-x: auto;
+  }
+
+  .category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    min-width: 70px;
+    cursor: pointer;
+  }
+
+  .category .circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: #262626;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    transition: background-color 0.2s ease;
+  }
+
+  .category:hover .circle {
+    background-color: #333;
+  }
+
+  .category span {
+    font-size: 0.85rem;
     color: #ccc;
-    font-size: 1rem;
+  }
+
+  .section-title {
+    padding: 20px 60px 0;
+    font-size: 1.3rem;
+    font-weight: 600;
   }
 
   .grid {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px;
+    padding: 24px 60px 60px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
   }
 
   .card {
-    background: #fff;
-    border-radius: 10px;
+    background: #1e1e1e;
+    border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease;
   }
 
   .card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
   }
 
   .card img {
     width: 100%;
-    height: 280px;
+    height: 260px;
     object-fit: cover;
     display: block;
+    background-color: #333;
   }
 
   .card-info {
-    padding: 16px;
+    padding: 14px 16px;
   }
 
   .card-info h2 {
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 
   .card-info .price {
-    color: #555;
-    font-size: 0.95rem;
-    margin-bottom: 14px;
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
   }
 
   .buy-btn {
     display: block;
     text-align: center;
-    background-color: #111;
-    color: #fff;
+    background-color: #fff;
+    color: #111;
     text-decoration: none;
     padding: 10px;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    font-weight: 500;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
     transition: background-color 0.2s ease;
   }
 
   .buy-btn:hover {
-    background-color: #333;
+    background-color: #e91e63;
+    color: #fff;
   }
 
   footer {
     text-align: center;
     padding: 30px 20px;
-    color: #888;
+    color: #666;
     font-size: 0.85rem;
   }
 </style>
 </head>
 <body>
 
-  <header>
-    <h1>Mes Sélections Vêtements</h1>
-    <p>Une sélection de pièces qui me plaisent, avec les liens pour les acheter</p>
-  </header>
+  <nav>
+    <div class="logo">mobutu<span style="font-weight:400;">finds</span></div>
+    <div class="links">
+      <span>Catégories</span>
+      <span>Parcourir</span>
+    </div>
+  </nav>
 
+  <section class="hero">
+    <h1>Trouve le style.<br><em>Paye moins.</em></h1>
+    <div class="search-bar">🔍 Rechercher un vêtement...</div>
+  </section>
+
+  <div class="categories">
+    <div class="category"><div class="circle">🔥</div><span>Populaire</span></div>
+    <div class="category"><div class="circle">🆕</div><span>Nouveau</span></div>
+    <div class="category"><div class="circle">👕</div><span>T-shirts</span></div>
+    <div class="category"><div class="circle">🧥</div><span>Vestes</span></div>
+    <div class="category"><div class="circle">👖</div><span>Pantalons</span></div>
+    <div class="category"><div class="circle">👟</div><span>Chaussures</span></div>
+    <div class="category"><div class="circle">🧢</div><span>Accessoires</span></div>
+    <div class="category"><div class="circle">👜</div><span>Sacs</span></div>
+    <div class="category"><div class="circle">⌚</div><span>Montres</span></div>
+  </div>
+
+  <h2 class="section-title">Populaire</h2>
   <main class="grid">
 
-    <!-- Exemple de produit n°1 : copie/colle ce bloc pour chaque nouveau vêtement -->
     <div class="card">
-      <img src="https://via.placeholder.com/400x500?text=Photo+du+vetement" alt="Nom du vêtement">
+      <img src="https://via.placeholder.com/400x500/1e1e1e/666?text=Photo" alt="Nom du vêtement">
       <div class="card-info">
         <h2>Nom du vêtement</h2>
         <p class="price">29,99 €</p>
@@ -124,9 +213,8 @@
       </div>
     </div>
 
-    <!-- Exemple de produit n°2 -->
     <div class="card">
-      <img src="https://via.placeholder.com/400x500?text=Photo+du+vetement" alt="Nom du vêtement">
+      <img src="https://via.placeholder.com/400x500/1e1e1e/666?text=Photo" alt="Nom du vêtement">
       <div class="card-info">
         <h2>Nom du vêtement</h2>
         <p class="price">49,99 €</p>
@@ -134,9 +222,8 @@
       </div>
     </div>
 
-    <!-- Exemple de produit n°3 -->
     <div class="card">
-      <img src="https://via.placeholder.com/400x500?text=Photo+du+vetement" alt="Nom du vêtement">
+      <img src="https://via.placeholder.com/400x500/1e1e1e/666?text=Photo" alt="Nom du vêtement">
       <div class="card-info">
         <h2>Nom du vêtement</h2>
         <p class="price">19,99 €</p>
@@ -147,7 +234,7 @@
   </main>
 
   <footer>
-    <p>Site créé avec ❤️ — les liens renvoient vers les boutiques partenaires</p>
+    <p>mobutufinds — les liens renvoient vers les boutiques partenaires</p>
   </footer>
 
 </body>
