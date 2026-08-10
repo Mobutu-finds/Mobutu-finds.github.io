@@ -26,7 +26,9 @@ DATA = ROOT / "data" / "products.json"
 
 SIZE_LABELS = {
     "XS", "S", "M", "L", "XL", "XXL", "2XL", "3XL", "4XL", "5XL",
-    "ONE SIZE", "OS", "FREE",
+    "ONE SIZE", "OS", "FREE", "32", "33", "34", "35", "36", "37", 
+    "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", 
+    "48", "49", "50",
 }
 SEASON_LABELS = {"Winter", "Summer", "Spring", "Autumn", "Fall"}
 UI_SKIP_LABELS = {
@@ -36,7 +38,9 @@ UI_SKIP_LABELS = {
     "Close", "INVITE NOW", "Sign in", "Sign up free",
 }
 MAX_QC_IMAGES = 24
-SIZE_ORDER = ["XS", "S", "M", "L", "XL", "XXL", "2XL", "3XL", "4XL", "5XL"]
+SIZE_ORDER = ["XS", "S", "M", "L", "XL", "XXL", "2XL", "3XL", "4XL", "5XL", "32", "33", "34", "35", "36", "37", 
+    "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", 
+    "48", "49", "50"]
 
 
 def clean(value):
