@@ -824,7 +824,7 @@ async def extract(url, headless=False):
                 return "pantalon"
             elif any(w in text for w in ["tee", "t-shirt", "shirt", "hoodie", "sweat", "zip", "jacket", "veste", "pull", "coat"]):
                 return "vêtement"
-            elif any(w in text for w in ["shoe", "sneaker", "dunk", "jordan", "runner", "chaussure"]):
+            elif any(w in text for w in ["shoe", "sneaker", "dunk", "jordan", "runner", "chaussure", "shoes", "sneakers", "airforce", "airmax", "airjordan", "nike", "adidas", "puma", "vans", "converse", "fila", "newbalance", "asics", "saucony", "brooks", "underarmour", "puma", "vans", "converse", "fila", "newbalance", "asics", "saucony", "brooks", "underarmour"]):
                 return "chaussures"
             else:
                 return "accessoire"
