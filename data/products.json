@@ -77,5 +77,58 @@
     "tags": [
       "Tao Bao"
     ]
+  },
+  {
+    "id": "617334535042",
+    "name": "test",
+    "title": "test",
+    "category": "accessoire",
+    "price": "58.95",
+    "currency": "USD",
+    "description": "",
+    "sizes": [],
+    "styles": [
+      "White (Male)",
+      "Black (Male) (No Return or Exchange)",
+      "Leisure",
+      "Sneakers"
+    ],
+    "season": "",
+    "weight": "1383g",
+    "dimensions": "",
+    "seller": "Sneaker Studio",
+    "channel": "Tao Bao",
+    "sku": "617334535042",
+    "images": [
+      "https://file.uufinds.com/product/2026/07/31/2083050881286217730/major/2c9280849fb2e8f9019fb67fbf921ec2.webp",
+      "https://file.uufinds.com/product/2026/07/31/2083050881286217730/major/2c9280849fb2e8f9019fb67fbfc91ec3.webp",
+      "https://file.uufinds.com/product/2026/07/31/2083050881286217730/major/2c9280849fb2e8f9019fb67fbfee1ec5.webp",
+      "https://file.uufinds.com/product/2026/07/31/2083050881286217730/major/2c9280849fb2e8f9019fb67fbf7a1ec1.webp",
+      "https://file.uufinds.com/product/2026/07/31/2083050881286217730/qc/2c9280849fb2e8f9019fb67fbf2e1ebf.webp",
+      "https://file.uufinds.com/product/2026/07/31/2083050881286217730/qc/2c9280849fb2e8f9019fb67fc1b51ec9.webp",
+      "https://file.uufinds.com/product/2026/07/31/2083050881286217730/qc/2c9280849fb2e8f9019fb67fc1501ec7.webp",
+      "https://file.uufinds.com/product/2026/07/31/2083050881286217730/qc/2c9280849fb2e8f9019fb67fc1701ec8.webp",
+      "https://file.uufinds.com/product/2026/07/31/2083050881286217730/qc/2c9280849fb2e8f9019fb67fc1d91eca.webp",
+      "https://file.uufinds.com/product/2026/07/31/2083050881286217730/qc/2c9280849fb2e8f9019fb67fbfe31ec4.webp"
+    ],
+    "productImages": [
+      "https://file.uufinds.com/product/2026/07/31/2083050881286217730/major/2c9280849fb2e8f9019fb67fbf921ec2.webp",
+      "https://file.uufinds.com/product/2026/07/31/2083050881286217730/major/2c9280849fb2e8f9019fb67fbfc91ec3.webp",
+      "https://file.uufinds.com/product/2026/07/31/2083050881286217730/major/2c9280849fb2e8f9019fb67fbfee1ec5.webp",
+      "https://file.uufinds.com/product/2026/07/31/2083050881286217730/major/2c9280849fb2e8f9019fb67fbf7a1ec1.webp"
+    ],
+    "qcImages": [
+      "https://file.uufinds.com/product/2026/07/31/2083050881286217730/qc/2c9280849fb2e8f9019fb67fbf2e1ebf.webp",
+      "https://file.uufinds.com/product/2026/07/31/2083050881286217730/qc/2c9280849fb2e8f9019fb67fc1b51ec9.webp",
+      "https://file.uufinds.com/product/2026/07/31/2083050881286217730/qc/2c9280849fb2e8f9019fb67fc1501ec7.webp",
+      "https://file.uufinds.com/product/2026/07/31/2083050881286217730/qc/2c9280849fb2e8f9019fb67fc1701ec8.webp",
+      "https://file.uufinds.com/product/2026/07/31/2083050881286217730/qc/2c9280849fb2e8f9019fb67fc1d91eca.webp",
+      "https://file.uufinds.com/product/2026/07/31/2083050881286217730/qc/2c9280849fb2e8f9019fb67fbfe31ec4.webp"
+    ],
+    "buyUrl": "https://www.uufinds.com/goodItemDetail/qc/1853614267553087489?spuNo=617334535042&channel=taobao&originPrice=58.95&originCurrencyCode=USD&foryou=1&abGroup=1",
+    "sourceUrl": "https://www.uufinds.com/goodItemDetail/qc/1853614267553087489?spuNo=617334535042&channel=taobao&originPrice=58.95&originCurrencyCode=USD&foryou=1&abGroup=1",
+    "tags": [
+      "Tao Bao"
+    ]
   }
 ]

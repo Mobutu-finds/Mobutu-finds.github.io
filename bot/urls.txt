@@ -1,2 +1,3 @@
 # Une URL publique par ligne
 https://www.uufinds.com/goodItemDetail/qc/1858812467674714113?spuNo=767463935663&channel=taobao&originPrice=16.15&originCurrencyCode=USD
+https://www.uufinds.com/goodItemDetail/qc/1853614267553087489?spuNo=617334535042&channel=taobao&originPrice=58.95&originCurrencyCode=USD&foryou=1&abGroup=1
