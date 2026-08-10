@@ -813,12 +813,22 @@ async def extract(url, headless=False):
             price = extract_price(body_text)
 
         product_id = first_nonempty(sku, url_params["pathId"], get_url_id(url))
-
-        product = {
+        
+def get_category(text):
+    text = str(text).lower()
+    if any(w in text for w in ["pantalon", "pants", "sweatpants", "trousers", "jeans", "jogging", "shorts", "cargo", "trackpant"]):
+        return "pantalon"
+    elif any(w in text for w in ["tee", "t-shirt", "shirt", "hoodie", "sweat", "zip", "jacket", "veste", "pull", "coat"]):
+        return "vêtement"  # ou "haut" selon les catégories de ton site
+    elif any(w in text for w in ["shoe", "sneaker", "dunk", "jordan", "runner", "chaussure"]):
+        return "chaussures"
+    return "accessoire"
+        
+         product = {
             "id": product_id,
             "name": name,
             "title": name,
-            "category": "accessoire",
+            "category": get_category(name),
             "price": price,
             "currency": currency,
             "description": description,
