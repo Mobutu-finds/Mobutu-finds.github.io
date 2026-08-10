@@ -1,0 +1,47 @@
+name: Import products
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * 1"
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install
+        run: |
+          pip install -r bot/requirements.txt
+          python -m playwright install --with-deps chromium
+
+      - name: Import URLs
+        run: |
+          while IFS= read -r url; do
+            case "$url" in
+              ""|\#*) continue ;;
+            esac
+            python bot/scraper.py "$url" --headless
+          done < bot/urls.txt
+
+      - name: Optional AI enrichment
+        if: ${{ secrets.OPENAI_API_KEY != '' }}
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python bot/enrich_catalog.py
+
+      - name: Commit catalog
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/products.json
+          git diff --cached --quiet || git commit -m "Update product catalog"
+          git push

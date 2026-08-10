@@ -1,0 +1,81 @@
+[
+  {
+    "id": "demo-001",
+    "name": "Produit exemple",
+    "title": "Produit exemple",
+    "category": "tshirt",
+    "price": 29.99,
+    "currency": "EUR",
+    "description": "Remplace cet exemple en important un produit avec le bot.",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "weight": "",
+    "dimensions": "",
+    "seller": "",
+    "images": [
+      "https://via.placeholder.com/600x750/1e1e1e/666?text=Photo"
+    ],
+    "buyUrl": "",
+    "sourceUrl": "",
+    "tags": [
+      "exemple"
+    ]
+  },
+  {
+    "id": "767463935663",
+    "name": "test",
+    "title": "test",
+    "category": "accessoire",
+    "price": "16.15",
+    "currency": "USD",
+    "description": "",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "styles": [
+      "Silver Gray",
+      "Light Gray(Flower Gray)",
+      "Black"
+    ],
+    "season": "",
+    "weight": "560g",
+    "dimensions": "",
+    "seller": "UnionKingdom",
+    "channel": "Tao Bao",
+    "sku": "767463935663",
+    "images": [
+      "https://file.uufinds.com/product/2026/08/01/2083450016183164929/major/2c9280849fb2e8f9019fbc2813ed4d68.webp",
+      "https://file.uufinds.com/product/2026/08/01/2083450016183164929/major/2c9280849fb2e8f9019fbc28141b4d69.webp",
+      "https://file.uufinds.com/product/2026/08/01/2083450016183164929/major/2c9280849fb2e8f9019fbc2812c74d66.webp",
+      "https://file.uufinds.com/product/2026/08/01/2083450016183164929/major/2c9280849fb2e8f9019fbc28132a4d67.webp",
+      "https://file.uufinds.com/product/2026/08/01/2083450016183164929/qc/2c9280849fb2e8f9019fbc2818314d6f.webp",
+      "https://file.uufinds.com/product/2026/08/01/2083450016183164929/qc/2c9280849fb2e8f9019fbc2817e84d6e.webp",
+      "https://file.uufinds.com/product/2026/08/01/2083450016183164929/qc/2c9280849fb2e8f9019fbc2817354d6a.webp",
+      "https://file.uufinds.com/product/2026/08/01/2083450016183164929/qc/2c9280849fb2e8f9019fbc2818d44d72.webp"
+    ],
+    "productImages": [
+      "https://file.uufinds.com/product/2026/08/01/2083450016183164929/major/2c9280849fb2e8f9019fbc2813ed4d68.webp",
+      "https://file.uufinds.com/product/2026/08/01/2083450016183164929/major/2c9280849fb2e8f9019fbc28141b4d69.webp",
+      "https://file.uufinds.com/product/2026/08/01/2083450016183164929/major/2c9280849fb2e8f9019fbc2812c74d66.webp",
+      "https://file.uufinds.com/product/2026/08/01/2083450016183164929/major/2c9280849fb2e8f9019fbc28132a4d67.webp"
+    ],
+    "qcImages": [
+      "https://file.uufinds.com/product/2026/08/01/2083450016183164929/qc/2c9280849fb2e8f9019fbc2818314d6f.webp",
+      "https://file.uufinds.com/product/2026/08/01/2083450016183164929/qc/2c9280849fb2e8f9019fbc2817e84d6e.webp",
+      "https://file.uufinds.com/product/2026/08/01/2083450016183164929/qc/2c9280849fb2e8f9019fbc2817354d6a.webp",
+      "https://file.uufinds.com/product/2026/08/01/2083450016183164929/qc/2c9280849fb2e8f9019fbc2818d44d72.webp"
+    ],
+    "buyUrl": "https://www.uufinds.com/goodItemDetail/qc/1858812467674714113?spuNo=767463935663",
+    "sourceUrl": "https://www.uufinds.com/goodItemDetail/qc/1858812467674714113?spuNo=767463935663",
+    "tags": [
+      "Tao Bao"
+    ]
+  }
+]

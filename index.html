@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobutu Finds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--bg-elevated:#141414;--bg-hover:#1c1c1c;--border:rgba(255,255,255,.08);--text:#f5f5f5;--text-muted:#888;--text-subtle:#555;--accent:#fff;--accent-text:#0a0a0a;--accent-hover:#e5e5e5;--shadow:0 8px 32px rgba(0,0,0,.4);--radius:12px;--radius-pill:999px}
+[data-theme=light]{--bg:#fafafa;--bg-elevated:#fff;--bg-hover:#f0f0f0;--border:rgba(0,0,0,.08);--text:#111;--text-muted:#666;--text-subtle:#999;--accent:#111;--accent-text:#fff;--accent-hover:#333;--shadow:0 8px 32px rgba(0,0,0,.08)}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+nav{display:flex;align-items:center;justify-content:space-between;padding:20px 48px;border-bottom:1px solid var(--border);position:sticky;top:0;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(12px);z-index:100}
+.logo{font-size:1.15rem;font-weight:700;letter-spacing:-.03em;text-transform:lowercase}.logo span{font-weight:400;color:var(--text-muted)}
+.profile-menu{position:relative}.profile-btn{width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:var(--bg-elevated);color:var(--text-muted);cursor:pointer;display:flex;align-items:center;justify-content:center}.profile-btn svg{width:20px;height:20px}
+.dropdown{position:absolute;top:calc(100% + 8px);right:0;min-width:220px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:8px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:.2s}.dropdown.open{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown-label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--text-subtle);padding:8px 12px 4px}.dropdown-item{display:flex;align-items:center;gap:10px;width:100%;padding:10px 12px;border:0;border-radius:8px;background:none;color:var(--text);font:.875rem Inter;cursor:pointer;text-align:left}.dropdown-item:hover,.dropdown-item.active{background:var(--bg-hover)}.dropdown-divider{height:1px;background:var(--border);margin:6px 0}
+.hero{padding:32px 48px 8px}.search-bar{max-width:480px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-pill);padding:0 18px;display:flex;align-items:center;gap:12px}.search-bar svg{width:18px;color:var(--text-muted)}.search-bar input{flex:1;background:transparent;border:0;outline:0;color:var(--text);font:.9rem Inter;padding:14px 0}
+.categories{display:flex;gap:8px;padding:28px 48px;overflow-x:auto;scrollbar-width:none}.categories::-webkit-scrollbar{display:none}.category{padding:8px 18px;border-radius:var(--radius-pill);border:1px solid var(--border);background:transparent;color:var(--text-muted);font:.85rem Inter;cursor:pointer;white-space:nowrap}.category:hover{border-color:var(--text-muted);color:var(--text)}.category.active{background:var(--accent);border-color:var(--accent);color:var(--accent-text)}
+.section-title{padding:8px 48px 0;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-subtle)}
+.grid{padding:20px 48px 64px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}.card{background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:.2s}.card:hover{border-color:var(--text-muted);transform:translateY(-2px)}.card img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:var(--bg-hover)}.card-info{padding:16px}.card-info h2{font-size:.9rem;font-weight:600;margin-bottom:4px}.price{color:var(--text-muted);font-size:.85rem;margin-bottom:14px}.link-btn,.buy-btn{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;background:var(--accent);color:var(--accent-text);border:0;padding:10px;border-radius:8px;font:.8rem Inter;font-weight:600;cursor:pointer;text-decoration:none}.empty-msg{padding:40px 48px;color:var(--text-muted);display:none}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;padding:20px;z-index:200}.modal.open{display:flex}.modal-box{width:min(1000px,100%);max-height:90vh;overflow:auto;background:var(--bg-elevated);border:1px solid var(--border);border-radius:18px;box-shadow:var(--shadow);padding:20px}.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.close{border:1px solid var(--border);background:transparent;color:var(--text);border-radius:50%;width:36px;height:36px;cursor:pointer}.detail{display:grid;grid-template-columns:minmax(280px,1fr) minmax(280px,1fr);gap:24px}.gallery-tabs{display:flex;gap:8px;margin-bottom:10px}.gallery-tab{padding:8px 14px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--text-muted);font:.8rem Inter;cursor:pointer}.gallery-tab.active{background:var(--accent);border-color:var(--accent);color:var(--accent-text)}.gallery-main{width:100%;aspect-ratio:4/5;object-fit:contain;background:var(--bg-hover);border-radius:12px}.thumbs{display:flex;gap:8px;overflow:auto;margin-top:10px}.thumbs img{width:64px;height:64px;object-fit:cover;border-radius:8px;cursor:pointer;border:1px solid var(--border)}.thumbs img.active{border-color:var(--accent)}.meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}.meta div{padding:12px;border:1px solid var(--border);border-radius:10px}.meta small{display:block;color:var(--text-subtle);margin-bottom:4px}.description{color:var(--text-muted);line-height:1.6;margin-bottom:18px}.tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}.tag{padding:5px 9px;border:1px solid var(--border);border-radius:99px;font-size:.75rem;color:var(--text-muted)}
+@media(max-width:700px){nav,.hero,.categories,.section-title,.grid,.empty-msg{padding-left:20px;padding-right:20px}.detail{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card-info{padding:12px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">mobutu<span>finds</span></div>
+  <div class="profile-menu">
+    <button class="profile-btn" id="profileBtn" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></button>
+    <div class="dropdown" id="profileDropdown">
+      <div class="dropdown-label">Thème</div>
+      <button class="dropdown-item" data-theme-choice="dark">🌙 Mode sombre</button>
+      <button class="dropdown-item" data-theme-choice="light">☀️ Mode clair</button>
+      <div class="dropdown-divider"></div>
+      <div class="dropdown-label">Langue</div>
+      <button class="dropdown-item" data-lang-choice="fr">🇫🇷 Français</button>
+      <button class="dropdown-item" data-lang-choice="en">🇬🇧 English</button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero"><div class="search-bar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg><input id="searchInput" placeholder="Rechercher un vêtement..."></div></section>
+<div class="categories" id="categoryBar">
+  <button class="category active" data-category="all">Tout</button><button class="category" data-category="tshirt">T-shirts</button><button class="category" data-category="veste">Vestes</button><button class="category" data-category="pantalon">Pantalons</button><button class="category" data-category="chaussure">Chaussures</button><button class="category" data-category="accessoire">Accessoires</button><button class="category" data-category="sac">Sacs</button>
+</div>
+<h2 class="section-title" id="sectionTitle">Populaire</h2>
+<main class="grid" id="productGrid"></main>
+<p class="empty-msg" id="emptyMsg">Aucun vêtement ne correspond à ta recherche.</p>
+
+<div class="modal" id="productModal">
+  <div class="modal-box">
+    <div class="modal-head"><h2 id="modalTitle">Produit</h2><button class="close" id="closeModal">×</button></div>
+    <div class="detail">
+      <div><div class="gallery-tabs"><button class="gallery-tab active" data-gallery="product" type="button">Photos produit</button><button class="gallery-tab" data-gallery="qc" type="button">Photos QC</button></div><img class="gallery-main" id="galleryMain" alt=""><div class="thumbs" id="thumbs"></div></div>
+      <div><div class="price" id="modalPrice"></div><p class="description" id="modalDescription"></p><div class="meta" id="modalMeta"></div><div class="tags" id="modalTags"></div><a class="buy-btn" id="buyBtn" target="_blank" rel="noopener noreferrer">Acheter / Voir le produit</a></div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
